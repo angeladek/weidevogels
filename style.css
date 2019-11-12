@@ -1,0 +1,538 @@
+.map_vee {
+    width: 100%;
+}
+
+.map_gemiddelden {
+    width: 100%;
+}
+
+
+.svg-container {
+/*    display: inline-block;*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'text tab'
+        'grafiek tabtext';
+    grid-template-columns: 600px auto;
+}
+
+/*
+.grid-containermaps_legend {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+*/
+
+#legend svg {
+    width: 100%;
+    height: 75px;
+}
+
+svg.legendsvg {
+    width: 7%;
+    height: 45px;
+}
+
+body {
+    font-family: "Microsoft PhagsPa";
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.gegevensGrafiek {
+    position: absolute;
+}
+
+.content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.lijn {
+    border: transparent;
+}
+
+/*grafiek*/
+path.domain {
+    stroke: #ffffff;
+    fill: #ffffff;
+}
+
+.xas text,
+.yas text {
+    fill: #939393;
+}
+
+.xas line {
+    stroke: #e2e2e2;
+    stroke-width: 3px;
+    
+}
+
+.yas line {
+    stroke: #e2e2e2;
+    stroke-width: 2px;
+    stroke-dasharray: 3,3;
+}
+
+.legend text {
+    fill: grey;
+    float: left;
+}
+
+.legend rect {}
+
+.grid-containervogels {
+    display: grid;
+    grid-template-columns: 17% 17% 17% 17%;
+}
+
+.grafiektext2 {
+    grid-area: text;
+    width: 95.5%;
+    /*    background-color: #f1f1f1;*/
+    /*    background-color: #f2f8ed;*/
+    background-color: #dddfd2;
+    color: #1E1E1E;
+    padding-left: 2.5%;
+    padding-right: 2%;
+    overflow: hidden;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.grafiektext1 {
+    grid-area: text;
+    width: 92%;
+    /*    background-color: #f1f1f1;*/
+    /*    background-color: #f2f8ed;*/
+    background-color: #dddfd2;
+    color: #1E1E1E;
+    padding-left: 4%;
+    padding-right: 6%;
+    overflow: hidden;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+svg#dataviz {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    grid-area: grafiek;
+}
+
+.tabtext {
+    grid-area: tabtext;
+    width: 100%;
+}
+
+.tab {
+    grid-area: tab;
+    width: 100%;
+}
+
+.grid-containermaps {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.grid_maps {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+h5 {
+    padding-right: 5%;
+    padding-left: 1%;
+    margin-bottom: 2px;
+}
+
+tooltip_map {
+    position: absolute;
+}
+
+/*navbar*/
+.topnav {
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #000000;
+    text-decoration: none;
+}
+
+.weidevogels_nav {
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    height: 65px;
+    padding-top: 1px;
+    padding-right: 32px;
+    margin-left: 10%;
+    color: #222c21;
+}
+
+.grafiek_nav {
+    margin-top: 12px;
+    padding-top: 14px;
+    width: 7%;
+    height: 32px;
+    text-align: center;
+    background-color: rgba(133, 147, 118, 0.5);
+/*    background-color: rgba(178, 178, 178, 0.5);*/
+    /*    border-right: black solid 0.5px;*/
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-left: 1%;
+    position: relative;
+}
+
+.grafiek_nav:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    top: 20%;
+    width: 0.5px;
+    height: 60%;
+    /* or 100px */
+    background: #555;
+}
+
+.kaart_nav {
+    margin-top: 12px;
+    padding-top: 14px;
+    width: 7%;
+    height: 32px;
+    text-align: center;
+    background-color: rgba(133, 147, 118, 0.5);
+/*    background-color: rgba(178, 178, 178, 0.5);*/
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.kaart_nav:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    top: 20%;
+    width: 0.5px;
+    height: 60%;
+    /* or 100px */
+    background: #555;
+}
+
+.grafiek_nav:hover,
+.kaart_nav:hover {
+/*    background-color: rgba(178, 178, 178, 0.8);*/
+    background-color: rgba(133, 147, 118, 0.8);
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*navbar mobile*/
+.grafiek_nav_mobile {
+    margin-top: 12px;
+    padding-top: 14px;
+    width: 7%;
+    height: 32px;
+    text-align: center;
+    background-color: rgba(178, 178, 178, 0.5);
+    /*    border-right: black solid 0.5px;*/
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+    display: none;
+}
+
+.grafiek_nav_mobile:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    top: 20%;
+    width: 0.5px;
+    height: 60%;
+    /* or 100px */
+    background: #555;
+}
+
+.kaart_nav_mobile:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    top: 20%;
+    width: 0.5px;
+    height: 60%;
+    /* or 100px */
+    background: #555;
+}
+
+.kaart_nav_mobile {
+    margin-top: 12px;
+    padding-top: 14px;
+    width: 7%;
+    height: 32px;
+    text-align: center;
+    background-color: rgba(178, 178, 178, 0.5);
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+    display: none;
+}
+
+.grafiek_nav_mobile:hover,
+.kaart_nav_mobile:hover {
+    background-color: rgba(178, 178, 178, 0.8);
+}
+
+#float_nav {
+    float: left;
+    width: 80px;
+}
+
+.topnav_mobile a {
+    color: #000000;
+    text-decoration: none;
+/*    padding-bottom: 14px;*/
+}
+
+#illustratie_hoek {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#introtext {
+    margin-top: 20vh;
+    font-size: 20px;
+    width: 60%;
+/*    height: 38vh;*/
+/*    overflow: hidden;*/
+}
+
+/*Vogelillustraties*/
+#grutto_img {
+/*
+    height: 170px;
+    width: 190px;
+*/
+    color: rgba(0, 0, 0, 0);
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-variant: small-caps;
+    /*    float: left;*/
+}
+
+#grutto_img:hover {
+    color: #7A7A99;
+}
+
+#kievit_img {
+/*
+    height: 170px;
+    width: 190px;
+*/
+    color: rgba(0, 0, 0, 0);
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-variant: small-caps;
+    /*    float: left;*/
+}
+
+#kievit_img:hover {
+    color: #EFBB87;
+}
+
+#kievit_img_text {
+    margin-top: 0px;
+}
+
+#scholekster_img {
+/*
+    height: 150px;
+    width: 190px;
+*/
+    color: rgba(0, 0, 0, 0);
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-variant: small-caps;
+}
+
+#scholekster_img:hover {
+    color: #bbc5ef;
+}
+
+#scholekster_img_text {
+    margin-top: 0px;
+}
+
+#tureluur_img {
+/*
+    height: 150px;
+    width: 190px;
+*/
+    color: rgba(0, 0, 0, 0);
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-variant: small-caps;
+}
+
+#tureluur_img:hover {
+    color: #E75856;
+}
+
+#grafiek {
+    margin-top: 8vh;
+}
+
+.kaartjes {
+    background-color: #ffffff;
+}
+
+/*slider*/
+.tabelslider {
+    width: 100%;
+    padding-top: 2vh;
+    background-color: #ffffff;
+    padding-bottom: 1vh;
+}
+
+/*
+.legend {
+    height: 20px;
+}
+*/
+
+#slider {
+    width: 100%;
+    height: 12px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+}
+
+#slider:hover {
+    opacity: 1;
+}
+
+#slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #8d8d8d;
+    cursor: pointer;
+}
+
+#slider::-webkit-slider-thumb {
+/*
+  -webkit-appearance: none;  Override default look 
+  appearance: none;
+*/
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #8d8d8d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+td.slidertable {
+    width: 45%;
+}
+
+td.slidercurvalue {
+    width: 10%;
+}
+
+.selected-slidervalue {}
+
+/*Map*/
+.legend {
+    font-size: 0.75em;
+}
+
+/*Grafiek*/
+.tooltip {
+    position: fixed;
+    color: #666666;
+}
+
+#naarboven {
+    text-decoration: none;
+    color: #000000;
+}
+
+footer {
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-top: 1px;
+    padding-left: 10%;
+    padding-right: 10%;
+    /*    padding-bottom: 0;*/
+    background-color: #dedede;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    height: 80px;
+    color: white;
+}
+
+table.tabelfooter {
+    padding-top: 1vh;
+    width: 100%;
+}
+
+.tabelfooter a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.imagefooter {
+    height: 120px; 
+    width: 100%;
+}
+
+.gras_footer_mobile {
+    display: none;
+}
+
+.bronvermelding {
+    padding-top: 50px;
+}
+
+
+
+
+
+
+
