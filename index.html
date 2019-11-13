@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weidevogels in Nederland</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href="tabs.css" rel="stylesheet" />
+    <link href="responsive.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="kaart.js"></script>
+    <script type="text/javascript" src="grafiek.js"></script>
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">     
+    <!--    progressive web app-->
+</head>
+
+<!--background="background.png"-->
+
+<body>
+    <div class="topnav">
+        <a class="weidevogels_nav" href="#home">Weidevogels</a>
+        <a class="grafiek_nav" href="#grafiek">GRAFIEK</a>
+        <a class="kaart_nav" href="#kaart">KAART</a>
+    </div>
+
+    <img class="illustratie_hoek" id="foto" src="grutto_vogel.png" height="auto" width="40%">
+    <img class="illustratie_hoek" id="contour" src="grutto_vogel_contour.png" height="auto" width="40%">
+   
+    <div class="content">
+
+        <div class="topnav_mobile">
+            <a class="grafiek_nav_mobile" id="float_nav" href="#grafiek">GRAFIEK</a>
+            <a class="kaart_nav_mobile" id="float_nav" href="#kaart">KAART</a>
+        </div>
+
+        <div id="introtext">
+            <p> <b>Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit.</b> <br> Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis <br> natoque penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus. Donec quam
+                felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+                nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis
+                vitae, justo.
+            </p>
+        </div>
+
+        <div class="grid-containervogels">
+            <div id="grutto_img" class="imgbounce">
+                <img src="Grutto.png" height="auto" width="100%">
+                <p id="kievit_img_text"><b class="textanimation">Grutto</b></p>
+            </div>
+
+            <div id="kievit_img" class="imgbounce">
+                <img src="kievit.png" height="auto" width="100%">
+                <p id="kievit_img_text"><b class="textanimation">Kievit</b></p>
+            </div>
+
+            <div id="scholekster_img" class="imgbounce">
+                <img src="scholekster.png" height="auto" width="100%">
+                <p id="scholekster_img_text"><b class="textanimation">Scholekster</b></p>
+            </div>
+
+            <div id="tureluur_img" class="imgbounce">
+                <img src="Tureluur.png" height="auto" width="100%">
+                <p id="scholekster_img_text"><b class="textanimation">Tureluur</b></p>
+            </div>
+        </div>
+
+        <hr id="grafiek" class="lijn">
+
+        <div class="grid-container">
+            <div class="grafiektext1">
+                <p><i>Toelichting grafiek. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.</i></p>
+            </div>
+
+            <div id="my_dataviz"></div>
+
+            <div class="tab">
+                <button class="tablinks active" onclick="openTab(event, 'bloemen')">Bloemen</button>
+                <button class="tablinks" onclick="openTab(event, 'mestaanwending')">Mest- aanwending</button>
+                <button class="tablinks" onclick="openTab(event, 'intensivering')">Intensivering</button>
+                <button class="tablinks" onclick="openTab(event, 'vervroegd_maaien')">Vervroegd maaien</button>
+            </div>
+
+            <div class="tabtext">
+                <div id="bloemen" class="tabcontent" style="display: block;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non ultricies dui. Mauris sagittis metus magna, a lacinia urna egestas non. Nulla eu pretium magna, ut luctus sapien. Donec a fringilla purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ultrices metus magna, id placerat neque malesuada ut. Cras nulla quam, varius a tristique id, pellentesque nec nisl. Proin pharetra sed purus id efficitur. Cras orci ligula, vestibulum sed molestie quis, tempor sed lacus. Donec finibus odio vitae diam tempor, et ultricies lorem viverra.</p>
+                </div>
+
+                <div id="mestaanwending" class="tabcontent">
+                    <p>Nunc mattis justo non ex laoreet aliquet. Pellentesque nec tellus at sapien hendrerit vestibulum. Sed vitae urna at elit blandit accumsan. Integer sit amet risus nisi. Donec eu viverra velit. Phasellus convallis nunc non ex maximus fringilla. Fusce et dapibus lorem, tempor tincidunt nunc. Vestibulum eget lorem sed lorem pellentesque efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris vehicula tortor est, et consectetur dolor bibendum et. Maecenas metus risus, venenatis ut imperdiet et, egestas id ipsum. Nam sit amet tellus.</p>
+                </div>
+
+                <div id="intensivering" class="tabcontent">
+                    <p>Integer et erat et tortor ultricies maximus vitae eget dui. Pellentesque scelerisque quam at ipsum interdum vestibulum. Suspendisse consequat turpis odio, ut ornare libero posuere at. Sed quis nunc tellus. Donec nec tincidunt sem. Quisque sed sodales nisl. Nam in dictum urna. Integer non ultricies ipsum. Praesent eleifend dui et felis ornare, et elementum lacus pharetra. Quisque porttitor sit amet velit non auctor. Sed lobortis tortor a risus maximus, id tempor justo consequat. Duis eget justo in tellus vestibulum tempus eu ut diam. Fusce laoreet velit at magna tincidunt congue.</p>
+                </div>
+
+                <div id="vervroegd_maaien" class="tabcontent">
+                    <p>In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra rhoncus pede. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique. Morbi mattis ullamcorper velit. Phasellus gravida semper nisi. Nullam vel sem.</p>
+                </div>
+            </div>
+
+            <!--            </div>-->
+
+        </div>
+
+
+        <hr id="kaart" class="lijn">
+        <div class="kaartjes">
+            <div class="grafiektext2">
+                <p><i>Toelichting kaart. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.</i></p>
+            </div>
+
+            <div class="grid-containermaps_legend">
+
+                <table border="0" class="tabelslider">
+                    <tr>
+                        <td colspan="2">
+                            <div class="slidecontainer" "slidertable">
+                                <input type="range" min="1990" max="2017" value="2017" class="slidervalue" id="slider">
+                            </div>
+                        </td>
+                        <!--                        <td class="slidercurvalue"></td>-->
+                    </tr>
+                    <tr>
+                        <td id="sliderminvalue" class="slidertable" align="left">1990</td>
+                        <td id="slidermaxvalue" class="slidertable" align="right">2017</td>
+                        <!--                        <td></td>-->
+                    </tr>
+                </table>
+
+                <!--            <p class="selected-slidervalue"></p>-->
+
+                <div class="legend"></div>
+            </div>
+
+            <div class="grid-containermaps">
+                <div class="map_grutto"></div>
+
+                <div class="map_kievit"></div>
+
+                <!--
+            </div>
+
+            <div class="grid-containermaps">
+-->
+                <div class="map_scholekster"></div>
+
+                <div class="map_tureluur"></div>
+
+            </div>
+
+            <p id="aantalVogels"></p>
+
+            <div class="grafiektext2">
+                <p><i>Toelichting vergelijking. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero. Nam quam nunc, blandit vel, luctus pulvinar.</i></p>
+            </div>
+
+
+
+            <div class="grid_maps">
+
+                <h5>Percentage van het melkvee dat wordt beweid per provincie in 2017</h5>
+                <h5>Gemiddelde afname van weidevogels in Nederland per provincie in 2017</h5>
+                <div class="map_vee"></div>
+
+                <div class="map_gemiddelden"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="imagefooter">
+        <img src="gras_footer.png" height="100%" width="100%" class="gras_footer">
+        <img src="gras_footer_mobile.png" height="100%" width="100%" class="gras_footer_mobile">
+    </div>
+
+    <footer>
+        <table class="tabelfooter">
+            <tr>
+                <td>
+                    Angela de Keyzer, 2019
+                </td>
+                <td align="right">
+                    <a href="bronvermelding.html">Bronvermelding</a>
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+
+    <div id="chartId"></div>
+
+
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+    </script>
+
+</body>
+
+</html>
